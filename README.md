@@ -4,9 +4,9 @@ A simple Node.JS/Javascript example for controlling an [Embrava Blynclight](http
 
 How to use
 ----------
-Assuming you have a current NodeJS installation, you will need to make sure you have the [node-hid](https://github.com/node-hid/node-hid) module installed, and then download the contents of this repository (at a minumum test.js, blync.js, device.js, and package.json) and run the sample <code>node test.js</code>.
+Assuming you have a current NodeJS installation, you will need to make sure you have the [node-hid](https://github.com/node-hid/node-hid) module installed, and then download the contents of this repository (at a minimum test.js, blync.js, device.js, and package.json) and run the sample <code>node test.js</code>.
 
-To define new Blynclight devices add the <code>dev.productId</code> to the list on line 10 in <code>blync.js</code>
+To define new Blynclight devices add the <code>dev.productId</code> to the list on line 10 in <code>blync.js</code> (currently supports the standard and mini devices).
 
 To control the light, see sample code in <code>test.js</code> but essentially you use:
 
