@@ -1,0 +1,16 @@
+{
+  "name": "blync-node",
+  "version": "1.0.0",
+  "description": "A simple Node.js demonstration to use the Embrava Blyclight",
+  "main": "test.js",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "keywords": [
+    "embrava",
+    "blynclight"
+  ],
+  "dependencies": {
+
+  }
+}
