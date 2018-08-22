@@ -11,6 +11,6 @@
     "blynclight"
   ],
   "dependencies": {
-
+    "node-hid":"^0.7.3"
   }
 }

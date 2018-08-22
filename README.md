@@ -1,16 +1,18 @@
 # Blync-Node
 
-A simple Node.JS/Javascript example for controlling an [Embrava Blynclight](https://embrava.com/)). 
+A simple Node.JS/Javascript example for controlling an [Embrava Blynclight](https://embrava.com/) as a HID (Human Interface Device) object. 
 
 How to use
 ----------
-Assuming you have a current NodeJS installation, download the contents of this repository (at a minumum test.js, blync.js, device.js, and package.json) and run the sample <code>node test.js</code>.
+Assuming you have a current NodeJS installation, you will need to make sure you have the [node-hid](https://github.com/node-hid/node-hid) module installed, and then download the contents of this repository (at a minumum test.js, blync.js, device.js, and package.json) and run the sample <code>node test.js</code>.
 
-To define new Blynclight devices add the productId to line 10 in <code>blync.js</code>
+To define new Blynclight devices add the <code>dev.productId</code> to the list on line 10 in <code>blync.js</code>
 
-To control the list, see sample code in <code>test.js</code> but essentially you call:
+To control the light, see sample code in <code>test.js</code> but essentially you use:
 
 <code>
+Blync = require('./blync');
+var device = Blync.getDevice(0);
 device.sendCommand(r, g, b,dim,blink);
 </code>
 
@@ -25,6 +27,7 @@ To Do
 ----------
 * add additional Blynclight devices (maybe Embrava would like to send me some to test!)
 * add the musicControl logic
+* only supports first Blynclight device it finds, what if there is >1?
 * make it all a bit more robust
 
 ----------
