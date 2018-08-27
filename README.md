@@ -36,7 +36,8 @@ To Do
 ----------
 * add additional Blynclight devices (maybe Embrava would like to send me some to test!)
 * add the musicControl logic
-* only supports first Blynclight device it finds, what if there is >1?
+* only supports first Blynclight device it finds, what if there is >1? (need more devices to test!)
+* consolidation and optimization 
 * make it all a bit more robust
 
 ----------
