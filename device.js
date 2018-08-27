@@ -3,6 +3,7 @@ var Device = function (hidDevice) {
 };
 
 function toInt(value) {
+  // check value is an integer (and cast as needed), and if not return zero 
   if (!isNaN(value) && 
          parseInt(Number(value)) == value && 
          !isNaN(parseInt(value, 10)) ) {
@@ -14,6 +15,7 @@ function toInt(value) {
 
 Device.prototype.sendCommand = function (red, green, blue, dim = false, blink = 0) {
 
+  // make sure the parameters are all integer
   red = toInt(red)
   green = toInt(green)
   blue = toInt(blue)

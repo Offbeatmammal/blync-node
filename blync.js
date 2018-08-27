@@ -7,7 +7,9 @@ var Blync = {
 
     devices = devices.filter(function (dev) {
       // this finds the first Blync Standard or Mini (other devices will need to be added)
-      return dev.vendorId === 3667 && (dev.productId === 9497 || dev.productId === 9495) && dev.interface === -1;
+      return dev.vendorId === 3667 && (dev.productId === 9497 || dev.productId === 9495); 
+      // on macOS/Windows, dev.interface === -1, but on Raspbian shows as 0, so removing for now:
+      // && dev.interface === -1;
   
     });
 
