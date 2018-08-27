@@ -26,10 +26,14 @@ By default the Blynclight will remain active and in a steady state provided powe
 Running from a web server
 ----------
 
-The <code>web.js</code> file shows an example of a simple NodeJS web server that displays a form and allows you to control the lights
+The <code>web.js</code> file shows an example of a simple NodeJS web server that displays a form and allows you to control the lights.
+
+I actually have it configured on my RaspberryPi to automatically start the web script following a reboot via crontab. I edit crontab using <code>crontab -e</code> and add the following line to the end of the file:
+<code>@reboot /home/pi/blync/auto.sh</code>. That runs the auto.sh script (you may need to adjust paths both in crontab and the script to suit your own configuration, as well as make the script executable <code>chmod +x auto.sh</code>).
 
 Raspberry Pi / Raspbian
 ----------
+I assume you've already got a current Raspbian build on your RaspberryPi (only tested with a B+), as well as working Node environment, but if not [this guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/) covers most of what you need to know.
 Note: As there isn't a predefined binary for Raspberry Pi currently, you will need to build from source and adjust permissions. To build from source see [this StackOverflow post](https://stackoverflow.com/a/23628625/1569675) and you will need to either adjust the permissions as [defined here](https://github.com/node-hid/node-hid#udev-device-permissions) (you can use the <code>embrava.rules</code> file in this repository) or run the node script with elevated permissions, eg: <code>sudo node test.js</code>
 
 To Do
