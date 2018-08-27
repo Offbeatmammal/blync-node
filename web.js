@@ -41,11 +41,11 @@ process.on( 'SIGINT', function() {
 
 // Create a function to handle every HTTP request
 function handler(request, response){
-
+    head = "<html><style>body, select {font-size:24px;}\n.submit {border-color:black;font-size:24px;}</style><body>"
     form = "<form action='/' method='post'>\n"+
-    "Blink:<select id='color' name='color'><option value='160,32,240'>Purple</option><option value='0,0,128'>Blue</option><option value='0,128,0'>Green</option><option value='128,0,0'>Red</option></select>\n"+
-    "<br><select id='blink' name='blink'><option value='0'>Steady</option><option value='1'>Slow</option><option value='2'>Medium</option><option value='3'>Fast</option></select>\n"+
-    "<br><input type='submit'></form>\n"
+    "Color:<select id='color' name='color'><option value='160,32,240'>Purple</option><option value='0,0,128'>Blue</option><option value='0,128,0'>Green</option><option value='128,0,0'>Red</option></select>\n"+
+    "<br>Status<select id='blink' name='blink'><option value='-1'>Off</option><option value='0'>Steady</option><option value='1'>Slow</option><option value='2'>Medium</option><option value='3'>Fast</option></select>\n"+
+    "<br><input class='submit' type='submit'></form>\n"
     script = "<script>\n" +
     "function formSel(id,val) {\n" +
     "        x = document.getElementById(id)\n" +
@@ -56,22 +56,25 @@ function handler(request, response){
     "    }\n" +
     "}\n" +
     "</script>\n"
-    console.log(script)
     if (request.method == "GET") { 
         response.setHeader('Content-Type', 'text/html');
         response.writeHead(200);
-        response.write("<html><body>")
+        response.write(head)
         response.end(form + "</body></html>");
     } else if (request.method == 'POST') {
         processPost(request, response, function() {
             // Use request.post.x here
-            var blink = (request.post.blink);
-            var color = (request.post.color)
+            var blink = request.post.blink;
+            var color = request.post.color
             var colors = color.split(",");
-            device.sendCommand((colors[0]), (colors[1]), (colors[2]),false,blink);
+            if (blink == -1) {
+                device.sendCommand(0,0,0,false,false);
+            } else {
+                device.sendCommand(colors[0], colors[1], colors[2],false,blink);
+            }
             response.setHeader('Content-Type', 'text/html');
             response.writeHead(200);
-            response.write("<html><body>");
+            response.write(head);
             defaults = "<script>\n"+
                 "formSel('color','"+ color +"');\n"+
                 "formSel('blink','"+ blink +"');\n"+
