@@ -2,7 +2,22 @@ var Device = function (hidDevice) {
   this.hidDevice = hidDevice;
 };
 
+function toInt(value) {
+  if (!isNaN(value) && 
+         parseInt(Number(value)) == value && 
+         !isNaN(parseInt(value, 10)) ) {
+           return parseInt(value)
+         } else {
+           return 0
+         }
+}
+
 Device.prototype.sendCommand = function (red, green, blue, dim = false, blink = 0) {
+
+  red = toInt(red)
+  green = toInt(green)
+  blue = toInt(blue)
+  blink = toInt(blink)
 
   lightControl = 0b000000
   // Bit0: 0 - Light On, 1 - Light Off 
