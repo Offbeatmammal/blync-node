@@ -23,9 +23,14 @@ where:
 
 By default the Blynclight will remain active and in a steady state provided power is maintained, but the <code>test.js</code> sample includes a <code>device.sendCommand</code> to deactivate the light in the exit handler
 
+Running from a web server
+----------
+
+The <code>web.js</code> file shows an example of a simple NodeJS web server that displays a form and allows you to control the lights
+
 Raspberry Pi / Raspbian
 ----------
-Note: As there isn't a predefined binary for Raspberry Pi currently, you will need to build from source and adjust permissions. To build from source see [this StackOverflow post](https://stackoverflow.com/a/23628625/1569675) and you will need to either adjust the permissions as [defined here](https://github.com/node-hid/node-hid#udev-device-permissions) or run the node script with elevated permissions, eg: <code>sudo node test.js</code>
+Note: As there isn't a predefined binary for Raspberry Pi currently, you will need to build from source and adjust permissions. To build from source see [this StackOverflow post](https://stackoverflow.com/a/23628625/1569675) and you will need to either adjust the permissions as [defined here](https://github.com/node-hid/node-hid#udev-device-permissions) (you can use the <code>embrava.rules</code> file in this repository) or run the node script with elevated permissions, eg: <code>sudo node test.js</code>
 
 To Do
 ----------
