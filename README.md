@@ -1,6 +1,6 @@
 # Blync-Node
 
-A simple Node.JS/Javascript example for controlling an [Embrava Blynclight](https://embrava.com/) as a HID (Human Interface Device) object. 
+A simple Node.JS/Javascript example for controlling an [Embrava Blynclight](https://amzn.to/2BWTuGw) as a HID (Human Interface Device) object. I have actually used this set up in a [TV Studio](http://offbeatmammal.com/2018/08/28/pi-and-blyncing-lights/)!
 
 How to use
 ----------
@@ -34,7 +34,8 @@ I actually have it configured on my RaspberryPi to automatically start the web s
 Raspberry Pi / Raspbian
 ----------
 I assume you've already got a current Raspbian build on your RaspberryPi (only tested with a B+), as well as working Node environment, but if not [this guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/) covers most of what you need to know.
-Note: As there isn't a predefined binary for Raspberry Pi currently, you will need to build from source and adjust permissions. To build from source see [this StackOverflow post](https://stackoverflow.com/a/23628625/1569675) and you will need to either adjust the permissions as [defined here](https://github.com/node-hid/node-hid#udev-device-permissions) (you can use the <code>embrava.rules</code> file in this repository) or run the node script with elevated permissions, eg: <code>sudo node test.js</code>
+Note: As there isn't a predefined binary for Raspberry Pi currently, you will need to build from source and adjust permissions. To build from source see [this StackOverflow post](https://stackoverflow.com/a/23628625/1569675) and you will need to either adjust the permissions as [defined here](https://github.com/node-hid/node-hid#udev-device-permissions) (you can use the <code>embrava.rules</code> file in this repository) or run the node script with elevated permissions, eg: <code>sudo node test.js</code>.
+If you want to use the RaspberryPi as a self-contained hotspot to control the Blynclight, see [these instructions](https://howtoraspberrypi.com/create-a-wi-fi-hotspot-in-less-than-10-minutes-with-pi-raspberry/).
 
 To Do
 ----------
