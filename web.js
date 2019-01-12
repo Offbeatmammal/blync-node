@@ -41,7 +41,7 @@ process.on( 'SIGINT', function() {
 
 // Create a function to handle every HTTP request
 function handler(request, response){
-    head = "<html><style>body, select {font-size:24px;}\n.submit {border-color:black;font-size:24px;}</style><body>"
+    head = "<!DOCTYPE html><html><style>body, select {font-size:32px;}\n.submit {border-color:black;font-size:32px;}</style><body>"
     form = "<form action='/' method='post'>\n"+
     "Color:<select id='color' name='color'><option value='160,32,240'>Purple</option><option value='0,0,128'>Blue</option><option value='0,128,0'>Green</option><option value='128,0,0'>Red</option></select>\n"+
     "<br>Status<select id='blink' name='blink'><option value='-1'>Off</option><option value='0'>Steady</option><option value='1'>Slow</option><option value='2'>Medium</option><option value='3'>Fast</option></select>\n"+
