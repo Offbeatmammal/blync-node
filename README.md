@@ -39,7 +39,7 @@ If you want to use the RaspberryPi as a self-contained hotspot to control the Bl
 
 To Do
 ----------
-* add additional Blynclight devices (maybe Embrava would like to send me some to test!)
+* add additional Blynclight devices (once I have the CommandBuffer worked out)
 * add the musicControl logic
 * only supports first Blynclight device it finds, what if there is >1? (need more devices to test!)
 * consolidation and optimization 
